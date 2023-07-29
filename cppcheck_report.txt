@@ -1,0 +1,92 @@
+example/multi_process_server.c:40:9: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int i;
+        ^
+example/multi_process_server_reuseport.c:40:9: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int i;
+        ^
+src/cgi.c:207:11: warning: The address of local variable 'buf' might be accessed at non-zero index. [objectIndex]
+    (*buf)[value->len] = '\0';
+          ^
+src/cgi.c:248:24: note: Address of variable taken here.
+        if (set_env_us(&buf, &len, he->env_name, &value))
+                       ^
+src/cgi.c:248:24: note: Calling function 'set_env_us', 1st argument '&buf' value is lifetime=buf
+        if (set_env_us(&buf, &len, he->env_name, &value))
+                       ^
+src/cgi.c:203:9: note: Assuming condition is Assuming condition is false
+    if (!check_buf_length(buf, olen, value->len))
+        ^
+src/cgi.c:207:11: note: The address of local variable 'buf' might be accessed at non-zero index.
+    (*buf)[value->len] = '\0';
+          ^
+src/cgi.c:207:11: warning: The address of local variable 'buf' might be accessed at non-zero index. [objectIndex]
+    (*buf)[value->len] = '\0';
+          ^
+src/cgi.c:277:20: note: Address of variable taken here.
+    if (set_env_us(&buf, &len, "REQUEST_URI", &uri))
+                   ^
+src/cgi.c:277:20: note: Calling function 'set_env_us', 1st argument '&buf' value is lifetime=buf
+    if (set_env_us(&buf, &len, "REQUEST_URI", &uri))
+                   ^
+src/cgi.c:203:9: note: Assuming condition is Assuming condition is false
+    if (!check_buf_length(buf, olen, value->len))
+        ^
+src/cgi.c:207:11: note: The address of local variable 'buf' might be accessed at non-zero index.
+    (*buf)[value->len] = '\0';
+          ^
+src/cgi.c:207:11: warning: The address of local variable 'buf' might be accessed at non-zero index. [objectIndex]
+    (*buf)[value->len] = '\0';
+          ^
+src/cgi.c:280:20: note: Address of variable taken here.
+    if (set_env_us(&buf, &len, "QUERY_STRING", &query))
+                   ^
+src/cgi.c:280:20: note: Calling function 'set_env_us', 1st argument '&buf' value is lifetime=buf
+    if (set_env_us(&buf, &len, "QUERY_STRING", &query))
+                   ^
+src/cgi.c:203:9: note: Assuming condition is Assuming condition is false
+    if (!check_buf_length(buf, olen, value->len))
+        ^
+src/cgi.c:207:11: note: The address of local variable 'buf' might be accessed at non-zero index.
+    (*buf)[value->len] = '\0';
+          ^
+src/cgi.c:62:26: error: Null pointer dereference: (struct uh_cgi*)NULL [nullPointer]
+    struct uh_cgi *cgi = container_of(w, struct uh_cgi, tmr);
+                         ^
+src/cgi.c:71:26: error: Null pointer dereference: (struct uh_cgi*)NULL [nullPointer]
+    struct uh_cgi *cgi = container_of(w, struct uh_cgi, proc);
+                         ^
+src/cgi.c:87:26: error: Null pointer dereference: (struct uh_cgi*)NULL [nullPointer]
+    struct uh_cgi *cgi = container_of(w, struct uh_cgi, ior);
+                         ^
+src/cgi.c:170:26: error: Null pointer dereference: (struct uh_cgi*)NULL [nullPointer]
+    struct uh_cgi *cgi = container_of(w, struct uh_cgi, iow);
+                         ^
+src/connection.c:869:43: error: Null pointer dereference: (struct uh_connection_internal*)NULL [nullPointer]
+    struct uh_connection_internal *conn = container_of(w, struct uh_connection_internal, iow);
+                                          ^
+src/connection.c:966:43: error: Null pointer dereference: (struct uh_connection_internal*)NULL [nullPointer]
+    struct uh_connection_internal *conn = container_of(w, struct uh_connection_internal, ior);
+                                          ^
+src/connection.c:1013:43: error: Null pointer dereference: (struct uh_connection_internal*)NULL [nullPointer]
+    struct uh_connection_internal *conn = container_of(w, struct uh_connection_internal, timer);
+                                          ^
+src/connection.c:940:18: style: The scope of the variable 'addr_str' can be reduced. [variableScope]
+            char addr_str[INET6_ADDRSTRLEN];
+                 ^
+src/connection.c:1000:9: error: Uninitialized variable: eof [uninitvar]
+    if (eof)
+        ^
+src/connection.c:831:10: style: The scope of the variable 'err_buf' can be reduced. [variableScope]
+    char err_buf[128];
+         ^
+src/connection.c:851:17: style: The scope of the variable 'err_buf' can be reduced. [variableScope]
+    static char err_buf[128];
+                ^
+src/uhttpd.c:109:29: error: Null pointer dereference: (struct uh_listener*)NULL [nullPointer]
+    struct uh_listener *l = container_of(w, struct uh_listener, ior);
+                            ^
+src/uhttpd.c:358:9: style: The scope of the variable 'l' can be reduced. [variableScope]
+    int l;
+        ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
